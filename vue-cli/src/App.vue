@@ -1,17 +1,30 @@
 <template>
   <div>
-    <about-me></about-me>
+    <component v-for="component in componentList" :key="component.id" :is="component" :componentList="componentList"></component>
   </div>
 </template>
 
 <script>
-import AboutMe from './components/AboutMe'
+import HeaderTab from '@/components/HeaderTab'
+import AboutMe from '@/components/AboutMe'
+import ProjectList from '@/components/ProjectList'
+import MainVisual from '@/components/MainVisual'
 
 export default {
-  components:{
-    'about-me':AboutMe
+  created(){
+    
+  },
+  mounted(){
+    console.log(this.$options)
+  },
+  computed:{
+    componentList(){
+      return [HeaderTab,MainVisual,AboutMe,ProjectList]
+    }
+    
   }
 }
+
 </script>
 
 <style>
