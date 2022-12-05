@@ -1,5 +1,5 @@
 <template>
-    <div class="container-visual">visual</div>
+  <div class="container-career">career</div>
 </template>
 
 <script>
@@ -9,9 +9,9 @@ export default {
 </script>
 
 <style>
-.container-visual{
+.container-career{
     width: 100%;
-    height: 100vh;
+    /* height: 200px; */
     background: rgb(214, 205, 205);
     border: 1px solid grey;
 }
