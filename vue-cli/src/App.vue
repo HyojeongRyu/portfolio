@@ -5,6 +5,24 @@
         <div class="tab" v-for="(tab,index) in componentList" :key="index" @click="goSection(index)">
           <span class="tab-name">{{tab.name}}</span>
         </div>
+        <div class="container-contact">
+          <div class="container-phone">
+            <span class="wrap-icon_phone">
+              <img src="@/assets/icon_phone.png" alt="">
+            </span>
+            <div class="wrap-content_phone"  @click="copy">
+              010-8367-0120
+            </div>
+          </div>
+          <div class="container-email">
+            <span class="wrap-icon_email">
+              <img src="@/assets/icon_email.png" alt="">
+            </span>
+            <div class="wrap-content_email" @click="copy">
+              ryu8701@gmail.com
+            </div>
+          </div>
+        </div>
       <!-- </div> -->
     </header>
     <div class="container-content">
@@ -45,12 +63,22 @@ export default {
     //idx번째 섹션으로 scroll하는 함수
     goSection(idx){
       const target=document.getElementsByClassName(this.$refs.section[idx].$el._prevClass)[0]
-      //메뉴바 height
-      const tabY=50;
+      // //메뉴바 height
+      // const tabY=50;
       //컴포넌트 top좌표
       const sectionTop=target.offsetTop;
-      console.log(sectionTop-tabY)
-      myFunction.scrollToPosition(sectionTop-tabY)
+      // myFunction.scrollToPosition(sectionTop-tabY)
+      myFunction.scrollToPosition(sectionTop)
+    },
+    copy(e){
+      console.log(e)
+      const content=document.getElementsByClassName(e.target._prevClass)[0].textContent
+      
+      if(content){
+        navigator.clipboard.writeText(content).then(() => {
+				alert('클립보드에 복사되었습니다.');
+			})
+      }
     }
   }
 }
@@ -58,42 +86,78 @@ export default {
 </script>
 
 <style>
+/* @font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+} */
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css);
 /* common */
 *{
   width:100%;
+  
 }
 body{
   margin:0px;
   padding:0px;
   display:block;
+  font-family: 'NanumSquare', sans-serif
+}
+
+p{
+  margin:2px;
 }
 ::-webkit-scrollbar{
   display: none;
 }
+a{
+  text-decoration: none;
+}
+a:link { color: black; text-decoration: none;}
+a:visited { color: black; text-decoration: none;}
+a:hover { color: black; text-decoration: none;}
 
 /* tab */
 .container-tabs{
     position:fixed;
-    width: 100%;
-    height: 50px;
+    width: 15%;
+    height: 100vh;
     background: rgb(214, 205, 205);
     border: 1px solid grey;
     display: flex;
     z-index: 99;
-    top:0px
+    right:0px;
+    display:flex;
+    flex-direction: column;
 }
 .tab{
   border: 1px solid grey;
-  height: 100%;
-  flex-grow: 1;
+  height: 30px;
+  padding:10px;
+  text-align: center;
+  /* flex-grow: 1; */
 }
+.container-phone,.container-email{
+  display: flex;
+}
+.wrap-icon_phone,.wrap-icon_email{
+  width: 20px;
+}
+.wrap-content_phone, .wrap-content_email{
+  font-size: 10px;
+}
+.wrap-content_phone:hover, .wrap-content_email:hover{
+  cursor:pointer
+}
+
 /* content*/
-.container-content{
+/* .container-content{
   margin-top:50px;
-}
+} */
 .section{
   /* padding-top: 50px; */
-  height: 100vh;
-  padding:10px 20px;
+  min-height: 100vh;
+  padding:20px 20px;
 }
 </style>
