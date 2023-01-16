@@ -2,9 +2,9 @@
   <div>
     <header class="container-tabs">
       <!-- <div class="wrap-tabs"> -->
-        <div class="tab" v-for="(tab,index) in componentList" :key="index" @click="goSection(index)">
-          <span class="tab-name">{{tab.name}}</span>
-        </div>
+        <ul class="tab" :class="{'_on':index===onTab}" v-for="(tab,index) in componentList" :key="index" @click="goSection(index)">
+          <li class="tab-name">{{tab.name}}</li>
+        </ul>
         <div class="container-contact">
           <div class="container-phone">
             <span class="wrap-icon_phone">
@@ -44,6 +44,11 @@ import AboutMe from '@/components/AboutMe'
 import myFunction from '@/myFunction'
 
 export default {
+  data(){
+      return{
+        onTab:undefined
+      }
+  },
   created(){
     console.log(this.componentList)
   },
@@ -69,6 +74,7 @@ export default {
       const sectionTop=target.offsetTop;
       // myFunction.scrollToPosition(sectionTop-tabY)
       myFunction.scrollToPosition(sectionTop)
+      this.onTab=idx
     },
     copy(e){
       console.log(e)
@@ -98,11 +104,21 @@ export default {
   width:100%;
   
 }
+:root {
+  --main-color: rgb(74,118,201);
+
+}
 body{
   margin:0px;
   padding:0px;
   display:block;
   font-family: 'NanumSquare', sans-serif
+}
+ul,li,ol{
+  list-style: none;
+  margin:0px;
+  padding: 0px;
+
 }
 
 p{
@@ -123,20 +139,36 @@ a:hover { color: black; text-decoration: none;}
     position:fixed;
     width: 15%;
     height: 100vh;
-    background: rgb(214, 205, 205);
-    border: 1px solid grey;
+    /* background: rgb(214, 205, 205); */
+    /* border: 1px solid grey; */
     display: flex;
     z-index: 99;
     right:0px;
-    display:flex;
     flex-direction: column;
+   
+    justify-content: center;
 }
 .tab{
-  border: 1px solid grey;
+  /* border: 1px solid grey; */
+  display: flex;
   height: 30px;
   padding:10px;
   text-align: center;
+  vertical-align: middle;
   /* flex-grow: 1; */
+  border-radius: 7px;
+}
+.tab-name{
+  text-align: center;
+  margin:auto
+}
+.tab._on{
+  background-color: var(--main-color);
+  color: white;
+}
+.container-contact{
+  position: absolute;
+  bottom: 10px;
 }
 .container-phone,.container-email{
   display: flex;

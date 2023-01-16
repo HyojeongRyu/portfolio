@@ -34,8 +34,8 @@ export default {
 .container-about{
     width: 100%;
     /* height: 100vh; */
-    background: rgb(214, 205, 205);
-    border: 1px solid grey;
+    /* background: rgb(214, 205, 205); */
+    /* border: 1px solid grey; */
 }
 .container-profile{
     width: 100%;

@@ -12,7 +12,7 @@ export default {
 .container-career{
     width: 100%;
     /* height: 200px; */
-    background: rgb(214, 205, 205);
-    border: 1px solid grey;
+    /* background: rgb(214, 205, 205);
+    border: 1px solid grey; */
 }
 </style>

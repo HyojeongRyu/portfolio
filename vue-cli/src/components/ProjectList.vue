@@ -4,7 +4,9 @@
 
 <script>
 export default {
-
+  cardList:[
+    {name:'식품정보 웹',}
+  ]
 }
 </script>
 
@@ -12,7 +14,7 @@ export default {
 .container-project{
     width: 100%;
     /* height: 100vh; */
-    background: rgb(214, 205, 205);
-    border: 1px solid grey;
+    /* background: rgb(214, 205, 205);
+    border: 1px solid grey; */
 }
 </style>
