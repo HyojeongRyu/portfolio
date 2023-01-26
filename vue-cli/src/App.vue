@@ -158,6 +158,9 @@ a:hover { color: black; text-decoration: none;}
   /* flex-grow: 1; */
   border-radius: 7px;
 }
+.tab:hover{
+  cursor: pointer;
+}
 .tab-name{
   text-align: center;
   margin:auto
