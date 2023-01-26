@@ -46,14 +46,15 @@ import myFunction from '@/myFunction'
 export default {
   data(){
       return{
-        onTab:undefined
+        onTab:0,
+        lastScroll:0
       }
   },
   created(){
     console.log(this.componentList)
   },
   mounted(){
-    // console.log(this.$options)
+    window.addEventListener('scroll',this.curTab)
   },
   computed:{
     componentList(){
@@ -65,6 +66,47 @@ export default {
     }
   },
   methods:{
+    curTab(){ //스크롤시 현재 탭 this.onTab에 할당
+      const result=myFunction.scrollDirection(this.lastScroll);
+      this.lastScroll=result.lastScroll;
+      
+      if(result.direction==='up'){
+        const prevSection=document.getElementsByClassName(this.$refs.section[this.onTab-1].$el._prevClass)[0]
+        const prevMid=prevSection.offsetTop+prevSection.offsetHeight/2
+        
+        window.scrollY<prevMid&&this.onTab--
+      }else if(result.direction==='down'){
+        const curSection=document.getElementsByClassName(this.$refs.section[this.onTab].$el._prevClass)[0]   
+        const curMid=curSection.offsetTop+curSection.offsetHeight/2
+        
+        window.scrollY>curMid&&this.onTab++
+      }
+
+      // if(result.direction==='up'){
+      //   const prevTop=document.getElementsByClassName(this.$refs.section[this.onTab+1].$el._prevClass)[0].offsetTop
+      //   const curTop=document.getElementsByClassName(this.$refs.section[this.onTab].$el._prevClass)[0].offsetTop
+      //   if(window.scrollY<=(curTop-prevTop)/2){
+      //     this.onTab--
+      //   }
+      // }else if(result.direction==='down'){
+      //   const nextTop=document.getElementsByClassName(this.$refs.section[this.onTab+1].$el._prevClass)[0].offsetTop
+      //   if(window.scrollY>=nextTop/2){
+      //     this.onTab++
+      //   }
+      // }
+    },
+    // //현재 섹션 어딘지 반환하는 함수
+    // curSection(){
+    //   // const prevTop=document.getElementsByClassName(this.$refs.section[this.onTab-1].$el._prevClass)[0].offsetTop
+    //   const curTop=document.getElementsByClassName(this.$refs.section[this.onTab].$el._prevClass)[0].offsetTop
+    //   const nextTop=document.getElementsByClassName(this.$refs.section[this.onTab+1].$el._prevClass)[0].offsetTop
+    //   if(nextTop&&window.scrollY>=nextTop){
+    //     this.onTab++
+    //   }
+    //   if(curTop&&window.scrollY<curTop){
+    //     this.onTab--
+    //   }
+    // },
     //idx번째 섹션으로 scroll하는 함수
     goSection(idx){
       const target=document.getElementsByClassName(this.$refs.section[idx].$el._prevClass)[0]
@@ -125,7 +167,7 @@ p{
   margin:2px;
 }
 ::-webkit-scrollbar{
-  display: none;
+  /* display: none; */
 }
 a{
   text-decoration: none;
