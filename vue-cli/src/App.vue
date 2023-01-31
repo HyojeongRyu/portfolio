@@ -61,7 +61,7 @@ export default {
       return [
         {component:AboutMe,name:'자기소개',icon:''},
         {component: ProjectList,name:'프로젝트',icon:''},
-        {component:MyCareer,name:'이력',icon:''}
+        {component:MyCareer,name:'기타활동/이력',icon:''}
       ] 
     }
   },
@@ -81,32 +81,8 @@ export default {
         
         window.scrollY>curMid&&this.onTab++
       }
-
-      // if(result.direction==='up'){
-      //   const prevTop=document.getElementsByClassName(this.$refs.section[this.onTab+1].$el._prevClass)[0].offsetTop
-      //   const curTop=document.getElementsByClassName(this.$refs.section[this.onTab].$el._prevClass)[0].offsetTop
-      //   if(window.scrollY<=(curTop-prevTop)/2){
-      //     this.onTab--
-      //   }
-      // }else if(result.direction==='down'){
-      //   const nextTop=document.getElementsByClassName(this.$refs.section[this.onTab+1].$el._prevClass)[0].offsetTop
-      //   if(window.scrollY>=nextTop/2){
-      //     this.onTab++
-      //   }
-      // }
     },
-    // //현재 섹션 어딘지 반환하는 함수
-    // curSection(){
-    //   // const prevTop=document.getElementsByClassName(this.$refs.section[this.onTab-1].$el._prevClass)[0].offsetTop
-    //   const curTop=document.getElementsByClassName(this.$refs.section[this.onTab].$el._prevClass)[0].offsetTop
-    //   const nextTop=document.getElementsByClassName(this.$refs.section[this.onTab+1].$el._prevClass)[0].offsetTop
-    //   if(nextTop&&window.scrollY>=nextTop){
-    //     this.onTab++
-    //   }
-    //   if(curTop&&window.scrollY<curTop){
-    //     this.onTab--
-    //   }
-    // },
+
     //idx번째 섹션으로 scroll하는 함수
     goSection(idx){
       const target=document.getElementsByClassName(this.$refs.section[idx].$el._prevClass)[0]
@@ -148,13 +124,15 @@ export default {
 }
 :root {
   --main-color: rgb(74,118,201);
+  --font-color: #3b3b3b
 
 }
 body{
   margin:0px;
   padding:0px;
   display:block;
-  font-family: 'NanumSquare', sans-serif
+  font-family: 'NanumSquare', sans-serif;
+  color: var(--font-color)
 }
 ul,li,ol{
   list-style: none;
