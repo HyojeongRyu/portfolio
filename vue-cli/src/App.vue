@@ -205,6 +205,9 @@ a:hover { color: black; text-decoration: none;}
 .wrap-content_phone:hover, .wrap-content_email:hover{
   cursor:pointer
 }
+.container-content{
+  width:80%;
+}
 
 /* content*/
 /* .container-content{
@@ -215,4 +218,57 @@ a:hover { color: black; text-decoration: none;}
   min-height: 100vh;
   padding:20px 20px;
 }
+
+/* card */
+.container-card{
+  width:100%;
+}
+.card{
+  margin:10px;
+  border-radius: 15px;
+  position:relative;
+  box-shadow: 1px 1px 5px var(--font-color) ;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+}
+.card:hover{
+  cursor:pointer
+}
+.card_img{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.card_img img{
+  display: block;
+  object-fit: cover;
+  
+}
+.card_curtain{
+  position: absolute;
+  top:0px;
+  width:100%;
+  height: 100%;
+  
+  opacity:0;
+  transition:0.3s;
+  background-color: rgba(0,0,0,0.7);
+  border-radius: 15px;
+  margin-left:-15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.curtain_detail{
+  color: white;
+  text-align: center;
+}
+.card_curtain:hover{
+  opacity:1;
+}
+.card_title{
+  font-weight: bold;
+}
+
 </style>
