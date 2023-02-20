@@ -228,12 +228,13 @@ a:hover { color: black; text-decoration: none;}
   border-radius: 15px;
   position:relative;
   box-shadow: 1px 1px 5px var(--font-color) ;
-  justify-content: space-between;
+  transition: all 0.2s linear;
   display: flex;
   flex-direction: column;
 }
 .card:hover{
-  cursor:pointer
+  cursor:pointer;
+  transform: scale(1.05)
 }
 .card_img{
   text-align: center;
@@ -248,6 +249,7 @@ a:hover { color: black; text-decoration: none;}
 .card_curtain{
   position: absolute;
   top:0px;
+  left:0px;
   width:100%;
   height: 100%;
   
@@ -255,10 +257,13 @@ a:hover { color: black; text-decoration: none;}
   transition:0.3s;
   background-color: rgba(0,0,0,0.7);
   border-radius: 15px;
-  margin-left:-15px;
+  
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+.card_title{
+  
 }
 .curtain_detail{
   color: white;

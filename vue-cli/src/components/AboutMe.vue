@@ -41,12 +41,10 @@
                                 <img :src="card.imgSrc">
                             </div>
                             <ul class="card_content channel">
-                                <li><span class="card_title"> {{ card.name }}</span></li>
-                                <li><span class="card_detail"> {{ card.detail }}</span></li>
+                                <li class="card_title channel"><span > {{ card.name }}</span></li>
+                                <li class="card_detail channel"><span> {{ card.detail }}</span></li>
                             </ul>
-                            <div class="card_curtain channel">
-                                <div class="curtain_detail channel">바로가기</div>
-                            </div>
+                         
                     </a>
                 </div>
             </div>
@@ -139,11 +137,18 @@ export default {
 
 }
 .card.channel{
+    transition: all 0.2s linear;
+    padding:20px 10px;
     width: 150px;
     height: 200px;
     display: flex;
     flex-direction: column;
     vertical-align: middle;
+    word-break: keep-all;
+    justify-content: space-around;
+}
+.card.channel:hover{
+    transform: scale(1.1)
 }
 .card_img.channel{
     width:100%;
@@ -155,5 +160,12 @@ export default {
 }
 .channel li{
     text-align: center;
+}
+.card_title.channel{
+    font-size: 17px;
+    margin: 10px 0px;
+}
+.card_detail.channel span{
+    line-height: 20px;
 }
 </style>
