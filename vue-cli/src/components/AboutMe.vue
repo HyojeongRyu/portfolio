@@ -87,15 +87,18 @@ export default {
     width:100%
 }
 .wrap-photo{
-    width: 30%;
+    width:200px;
+    height: 250px;
 }
 .profile-photo{
-    height: 200px;
-    object-fit: cover;
+    width:100%;
+    height: 100%;
+    /* object-fit: cover; */
 }
 .container-introduce{
     width: 70%;
-    margin-left: 7px;
+    margin-left: 15px;
+    padding:2px;
 }
 .name{
    

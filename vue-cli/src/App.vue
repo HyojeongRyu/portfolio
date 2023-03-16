@@ -1,5 +1,16 @@
 <template>
-  <div>
+  <div class="container-root">
+    <div class="no-mobile">
+      <div class="wrap-sorry">
+        <div>
+          OOPS! SORRY
+        </div>
+        <div>
+          죄송합니다. 모바일 기기는 지원하지 않습니다.
+        </div>
+      </div>
+      
+    </div>
     <header class="container-tabs">
       <!-- <div class="wrap-tabs"> -->
         <ul class="tab" :class="{'_on':index===onTab}" v-for="(tab,index) in componentList" :key="index" @click="goSection(index)">
@@ -154,20 +165,40 @@ a:link { color: black; text-decoration: none;}
 a:visited { color: black; text-decoration: none;}
 a:hover { color: black; text-decoration: none;}
 
+/* root component
+.container-root{
+  display: flex;
+  justify-content:center
+} */
+
+.no-mobile{
+  display: none;
+  width:100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.85);
+  text-align: center;
+  color:white;
+}
+.wrap-sorry{
+  width:80%;
+  word-break: keep-all;
+}
+
 /* tab */
 .container-tabs{
     position:fixed;
-    width: 15%;
+    width: 150px;
     height: 100vh;
     /* background: rgb(214, 205, 205); */
     /* border: 1px solid grey; */
     display: flex;
-    z-index: 99;
+    z-index: 98;
     right:0px;
     flex-direction: column;
    
     justify-content: center;
 }
+
 .tab{
   /* border: 1px solid grey; */
   display: flex;
@@ -183,7 +214,8 @@ a:hover { color: black; text-decoration: none;}
 }
 .tab-name{
   text-align: center;
-  margin:auto
+  margin:auto;
+  font-size:17px;
 }
 .tab._on{
   background-color: var(--main-color);
@@ -200,13 +232,15 @@ a:hover { color: black; text-decoration: none;}
   width: 20px;
 }
 .wrap-content_phone, .wrap-content_email{
-  font-size: 10px;
+  font-size: 13px;
 }
 .wrap-content_phone:hover, .wrap-content_email:hover{
   cursor:pointer
 }
 .container-content{
   width:80%;
+  max-width:1386px;
+  /* margin-right: 200px; */
 }
 
 /* content*/
@@ -274,6 +308,36 @@ a:hover { color: black; text-decoration: none;}
 }
 .card_title{
   font-weight: bold;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+ .container-tabs{
+    width:130px;
+ }
+}
+/* tablet */
+@media (max-width: 767px) {
+ .container-tabs{
+    width:120px;
+ }
+.container-content{
+    width:80%;
+  }
+}
+/* mobile (not supported) */
+@media (max-width: 766px){
+  .no-mobile{
+    position:fixed;
+    z-index: 99;
+    display: flex;
+    justify-content: center;    
+  }
+  .wrap-sorry{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 </style>
