@@ -38,7 +38,7 @@ export default {
       cardList:[
         {detail: '식품 정보 웹 ver.2 (Mobile 전용)', name:'식품정보 웹 V2', period: '2022.05.~2022.07. (3개월)', roll: '프론트엔드, 서비스 기획',men:'1명',percentage:'100%', tool:'Vue2, HTML/CSS, JavaScript',imgSrc:require('@/assets/safeean2.png'),link:'http://qr.safeean.com/beta'},  
         {detail: 'QR 스캔시 식품 정보를 알려주는 웹 (Mobile 전용)', name:'식품정보 웹', period: '2021.03.~2021.08. (5개월)', roll: '프론트엔드,서비스 기획, 디자인',men:'2명', percentage:'40%',tool:'Vue2, HTML/CSS, JavaScript',imgSrc:require('@/assets/safeean1.png'),link:'http://qr.safeean.com/'},
-        {detail: '', name:'카페 커뮤니티', period: '2022.02.~(진행중)', roll: '프론트엔드, 백엔드 (회원가입/로그인 파트) ',men:'3명', percentage:'40%', tool:'Vue2, HTML/CSS, JavaScript',imgSrc:require('@/assets/cafe.png'),link:'https://www.naver.com/'}
+        {detail: '', name:'카페 커뮤니티', period: '2022.02.~(진행중)', roll: '프론트엔드, 백엔드 (회원가입/로그인 파트) ',men:'3명', percentage:'40%', tool:'Vue2, HTML/CSS, JavaScript',imgSrc:require('@/assets/cafe.png'),link:'https://github.com/HyojeongRyu/web-project'}
       ]
     }
   },
@@ -83,6 +83,10 @@ export default {
   height: 300px;
   padding:5px;
   margin:20px 0px;
+}
+.card.project:hover{
+  cursor:pointer;
+  transform: scale(1.05)
 }
 .wrap-card.projcet{
   display: flex;
