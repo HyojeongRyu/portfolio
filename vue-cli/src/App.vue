@@ -224,10 +224,11 @@ a:hover { color: black; text-decoration: none;}
 }
 .container-contact{
   position: absolute;
-  bottom: 10px;
+  bottom: 20px;
 }
 .container-phone,.container-email{
   display: flex;
+  margin-bottom:2px;
 }
 .wrap-icon_phone,.wrap-icon_email{
   width: 20px;
@@ -276,7 +277,6 @@ a:hover { color: black; text-decoration: none;}
 .card_img img{
   display: block;
   object-fit: cover;
-  
 }
 .card_curtain{
   position: absolute;
@@ -312,6 +312,9 @@ a:hover { color: black; text-decoration: none;}
 @media (max-width: 900px) {
  .container-tabs{
     width:130px;
+ }
+ .wrap-content_email{
+  font-size:11px;
  }
 }
 /* tablet */

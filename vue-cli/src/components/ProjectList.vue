@@ -63,13 +63,30 @@ export default {
 }
 .wrap-content{
   display: flex;
-  margin:5px 0px;
+  flex-direction: row;
+  justify-content: center;
+  vertical-align: middle;
+  /* margin:5px 0px; */
+  margin:auto;
+}
+.wrap-card.project{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content:flex-start;
+}
+.card_curtain.project{
+  
+  min-height: 200px;
+ 
 }
 .card.project{
-  padding:10px 15px;
-  min-width: 300px;
-  width: 70%;
-  height: 300px;
+  
+  padding:10px 10px;
+  min-width: 370px;
+  width: 45%;
+  min-height: 280px;
   margin:20px 0px;
   /* min-height: 200px; */
   /* width: 100%; */
@@ -77,46 +94,38 @@ export default {
 .card_img.project{
   width: 30%;
   max-width: 150px;
+  height: 200px;
 }
 .card_img.project img{
-  border-radius: 10px;
-  height: 100%;
-}
-.card.project{
-  min-width: 300px;
-  width: 70%;
-  height: 300px;
-  padding:5px;
-  margin:20px 0px;
+  border-radius: 15px;
+  width:100%;
+  
 }
 .card.project:hover{
   cursor:pointer;
   transform: scale(1.05)
 }
-.wrap-card.projcet{
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.card_curtain.project{
-  
-  min-height: 200px;
- 
-}
+
 .card_name.project{
   color:var(--main-color);
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   font-size: 20px;
   font-weight:800;
+  margin-left: 2px;
 }
 .card_title.project{
   font-size: 17px;
 }
 .card_content.project{
   width:70%;
-  padding:20px 15px;
+  padding-left: 10px;
   min-height: 200px;
   /* box-shadow: 1px 1px 5px var(--font-color) ; */
-  line-height: 2;  
+  line-height: 1.7;  
+  vertical-align: middle;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  word-break: keep-all;
 }
 </style>

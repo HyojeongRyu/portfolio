@@ -52,7 +52,9 @@ export default {
     border: 1px solid grey; */
 }
 .card.career{
+  width:80%;
   padding: 12px 0px 15px 20px;
+  max-width:650px;
 }
 .wrap-card.career{
   /* margin-bottom: 10px; */
