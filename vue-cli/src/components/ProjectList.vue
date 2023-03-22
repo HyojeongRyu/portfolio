@@ -63,26 +63,24 @@ export default {
 }
 .wrap-content{
   display: flex;
+  margin:5px 0px;
 }
 .card.project{
-  padding:20px 15px;
-  
-  min-height: 200px;
-  width: 100%;
+  padding:10px 15px;
+  min-width: 300px;
+  width: 70%;
+  height: 300px;
+  margin:20px 0px;
+  /* min-height: 200px; */
+  /* width: 100%; */
 }
 .card_img.project{
   width: 30%;
+  max-width: 150px;
 }
 .card_img.project img{
   border-radius: 10px;
   height: 100%;
-}
-.card.project{
-  min-width: 300px;
-  width: 70%;
-  height: 300px;
-  padding:5px;
-  margin:20px 0px;
 }
 .wrap-card.projcet{
   display: flex;
