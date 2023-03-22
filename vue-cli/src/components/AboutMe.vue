@@ -24,7 +24,7 @@
                 <a class="channel" href="https://hyodventure.notion.site/">개발블로그</a>
             </div>
         </div>
-        <div class="container-history">
+        <div class="container-experience">
             <div class="contianer-skill">
                 <h3>보유스킬</h3>
                 <img class="skill" src="@/assets/skill.png" alt="hyojeong_skill">
@@ -80,10 +80,10 @@ export default {
     width: 100%;
     display: flex;
 }
-.container-history{
+.container-experience{
     width: 100%;
 }
-.container-history img{
+.container-experience img{
     width:100%
 }
 .wrap-photo{

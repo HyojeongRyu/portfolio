@@ -141,9 +141,11 @@ export default {
 body{
   margin:0px;
   padding:0px;
-  display:block;
+  display:flex;
+  justify-content: center;
   font-family: 'NanumSquare', sans-serif;
-  color: var(--font-color)
+  color: var(--font-color);
+  max-width: 1536px;
 }
 ul,li,ol{
   list-style: none;
@@ -165,11 +167,10 @@ a:link { color: black; text-decoration: none;}
 a:visited { color: black; text-decoration: none;}
 a:hover { color: black; text-decoration: none;}
 
-/* root component
+/* root component */
 .container-root{
-  display: flex;
-  justify-content:center
-} */
+  margin: auto;
+}
 
 .no-mobile{
   display: none;
@@ -266,10 +267,7 @@ a:hover { color: black; text-decoration: none;}
   display: flex;
   flex-direction: column;
 }
-.card:hover{
-  cursor:pointer;
-  transform: scale(1.05)
-}
+
 .card_img{
   text-align: center;
   display: flex;
