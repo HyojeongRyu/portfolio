@@ -1,7 +1,7 @@
 <template>
   <div class="container-project">
     <div class="container-card project">
-      <h3>프로젝트</h3>
+      <h2>프로젝트</h2>
       <div class="wrap-card project">
         <a class="card project" :href="card.link" target="_blank" v-for="(card,idx) in cardList" :key="idx">
           <div class="card_name project">{{ card.name }}</div>
@@ -99,7 +99,7 @@ export default {
 .card_img.project img{
   border-radius: 15px;
   width:100%;
-  
+  object-fit: cover;
 }
 .card.project:hover{
   cursor:pointer;

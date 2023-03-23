@@ -7,7 +7,7 @@
           <span class="card_title career">• {{career.name}} </span>
           <div  class="card_content career">
             <li v-for="(list, listIdx) in career.list" :key="listIdx">
-              <span class="content_date">{{ list.date }}</span><span>{{ list.content }}</span>
+              <span class="content_date career">{{ list.date }}</span><span>{{ list.content }}</span>
             </li>
           </div>
         </div>
@@ -37,7 +37,6 @@ export default {
             {date:'2015. 03. ~ 2015. 12. ', content: '부경대학교 경영학부 학생회 사무국장'}
           ]
         },
-
       ]
     }
   }
@@ -55,6 +54,9 @@ export default {
   width:80%;
   padding: 12px 0px 15px 20px;
   max-width:650px;
+  margin:10px 15px;
+  box-shadow: none;
+  border: solid 0.5px grey;
 }
 .wrap-card.career{
   /* margin-bottom: 10px; */
@@ -67,7 +69,7 @@ export default {
   margin-top: 5px;
   padding-left: 10px;
 }
-.content_date{
+.content_date.career{
   font-weight: 600;
   margin-right: 7px;
 }

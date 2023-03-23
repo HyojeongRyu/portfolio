@@ -252,7 +252,9 @@ a:hover { color: black; text-decoration: none;}
 .section{
   /* padding-top: 50px; */
   min-height: 100vh;
-  padding:20px 20px;
+  padding:20px 20px 50px 20px;
+  border-bottom:  1px solid var(--main-color);
+  
 }
 
 /* card */
@@ -260,13 +262,14 @@ a:hover { color: black; text-decoration: none;}
   width:100%;
 }
 .card{
-  margin:10px;
+  
   border-radius: 15px;
   position:relative;
   box-shadow: 1px 1px 5px var(--font-color) ;
   transition: all 0.2s linear;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .card_img{
@@ -276,7 +279,8 @@ a:hover { color: black; text-decoration: none;}
 }
 .card_img img{
   display: block;
-  object-fit: cover;
+  object-fit: contain;
+  width:100%;
 }
 .card_curtain{
   position: absolute;
@@ -293,9 +297,6 @@ a:hover { color: black; text-decoration: none;}
   display: flex;
   justify-content: center;
   flex-direction: column;
-}
-.card_title{
-  
 }
 .curtain_detail{
   color: white;
