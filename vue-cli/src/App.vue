@@ -16,7 +16,7 @@
         <ul class="tab" :class="{'_on':index===onTab}" v-for="(tab,index) in componentList" :key="index" @click="goSection(index)">
           <li class="tab-name">{{tab.name}}</li>
         </ul>
-        <div class="container-contact">
+        <div class="container-contact" title="클릭 시 연락처가 클립보드에 복사됩니다.">
           <div class="container-phone">
             <span class="wrap-icon_phone">
               <img src="@/assets/icon_phone.png" alt="">
@@ -25,7 +25,7 @@
               010-8367-0120
             </div>
           </div>
-          <div class="container-email">
+          <div class="container-email" title="클릭 시 메일주소가 클립보드에 복사됩니다.">
             <span class="wrap-icon_email">
               <img src="@/assets/icon_email.png" alt="">
             </span>
@@ -170,8 +170,8 @@ a:hover { color: black; text-decoration: none;}
 /* root component */
 .container-root{
   margin: auto;
-  display:flex;
-  justify-content: center;
+  /* display:flex;
+  justify-content: center; */
 }
 
 .no-mobile{
@@ -342,6 +342,14 @@ a:hover { color: black; text-decoration: none;}
     flex-direction: column;
     justify-content: center;
   }
+}
+/* desktop */
+@media (min-width: 1561px){
+  .container-root{
+  margin: auto;
+  display:flex;
+  justify-content: center;
+}
 }
 
 </style>

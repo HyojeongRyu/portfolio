@@ -10,35 +10,34 @@
                 </div>
                 <div class="container-info">
                     <div class="wrap-info">
-                        <p class="info_title">부경대 경영학부 졸업</p>
-                        <p class="info_detail">관광경영학 전공</p>
+                        <div class="info_title">• 부경대 경영학부 졸업</div>
+                        <div class="info_detail">관광경영학 전공</div>
                     </div>
                     <div class="wrap-info">
-                        <p class="info_title">부산대 블록체인 개발자 양성과정 수료</p>
+                        <div class="info_title">• 부산대 블록체인 개발자 양성과정 수료</div>
                     </div>
                     <div class="wrap-info">
-                        <p class="info_title">바다플랫폼 근무</p>
-                        <p class="info_detail">연구개발팀장 (2021.03 ~ 2022.11)</p>
+                        <div class="info_title">• (주)바다플랫폼 근무</div>
+                        <div class="info_detail">연구개발팀장 (2021.03 ~ 2022.11)</div>
                     </div>
                 </div>
-                <a class="channel" href="https://hyodventure.notion.site/">개발블로그</a>
             </div>
         </div>
         <div class="container-experience">
             <div class="container-skill">
                 <div class="wrap-skill" v-for="(skill,idx) in skillList" :key="idx">
-                    <h3>{{skill.name}}</h3>
+                    <div class="skill_title">{{skill.name}}</div>
                     <div class="card skill" v-for="(list, listIdx) in skill.list" :key="listIdx">
-                        <div class="wrap-content skill">
-                            <div class="card_img skill">
-                                <img :src="list.logo">
-                            </div>
-                            <ul class="card_content skill">
-                                <li class="content_date skill">{{ list.date }}</li>
-                                <li class="card_title skill">{{ list.title }}</li>
-                                <li >{{ list.detail }}</li>
-                            </ul>
-                        </div>
+                        <ul class="wrap-content skill">
+                            <li class="skill" v-for="(itm,idx) in list.logo" :key="idx">
+                                <div class="card_img skill">
+                                    <img :src="itm">
+                                </div>
+                                <div class="skill_detail">{{ list.detail[idx] }}</div>
+                            </li>
+                            
+                        </ul>
+                  
                     </div>
                 </div>
             </div>
@@ -53,7 +52,7 @@
                             <ul class="card_content work">
                                 <li class="content_date work">{{ list.date }}</li>
                                 <li class="card_title work">{{ list.title }}</li>
-                                <li >{{ list.detail }}</li>
+                                <li class="card_detail work" >{{ list.detail }}</li>
                             </ul>
                         </div>
                     </div>
@@ -91,13 +90,13 @@ export default {
                 {
                     name:'WORK',
                     list:[
-                        {logo: require('@/assets/vada_logo.png'), date: '2021. 03. ~ 2022. 11.  (1년 7개월)', title:'프론트엔드 개발, 서비스 기획, 경영지원', detail:'(스타트업 초기멤버 - 연구개발팀장)'},
+                        {logo: require('@/assets/vada_logo.png'), date: '2021. 03. ~ 2022. 11.  (1년 7개월)', title:'프론트엔드, 서비스 기획, 경영지원', detail:'스타트업 초기멤버'},
                     ]
                 },
                 {
                     name:'EDUCATION',
                     list:[
-                        {logo: require('@/assets/pnu_logo.png'), date: '2020. 07. ~ 2020. 12.  (6개월)', title: '부산대 블록체인 개발자 양성과정',detail:'(조장)'}
+                        {logo: require('@/assets/pnu_logo.png'), date: '2020. 07. ~ 2020. 12.  (6개월)', title: '부산대 블록체인 개발자 양성과정',detail:'조장'}
                     ]
                 },
             ],
@@ -105,7 +104,55 @@ export default {
                 {
                     name:'Front-End',
                     list:[
-                        {logo:'', detail: 'HTML5, CSS3, JavaScript(ES6),Jquery, Vue2'},
+                        {
+                            logo:[require('@/assets/skill-logo/html.png'),require('@/assets/skill-logo/css.png'),require('@/assets/skill-logo/vue.png'), require('@/assets/skill-logo/js.png')],
+                            detail: ['HTML5', 'CSS3', 'Vue2',  'JS(ES6)'],
+                        }
+                    ]
+                },
+                {
+                    name:'Back-End',
+                    list:[
+                        {
+                            logo:[require('@/assets/skill-logo/nodejs.png'),require('@/assets/skill-logo/rest-api.png')],
+                            detail: ['Node.js', 'RESTful API(JSON)']
+                        }
+                    ]
+                },
+                {
+                    name:'Server',
+                    list:[
+                        {
+                            logo:[require('@/assets/skill-logo/nginx.png'),require('@/assets/skill-logo/ncp.png'),require('@/assets/skill-logo/aws.png')],
+                            detail: ['NginX', 'NCP Server', 'AWS EC2']
+                        },
+                    ]
+                },
+                {
+                    name:'DB',
+                    list:[
+                        {
+                            logo:[require('@/assets/skill-logo/mysql.png'),require('@/assets/skill-logo/maria.png')],
+                            detail: ['MySQL', 'MariaDB']
+                        },
+                    ]
+                },
+                {
+                    name:'OS',
+                    list:[
+                        {
+                            logo:[require('@/assets/skill-logo/ubuntu.png')],
+                            detail: ['Ubuntu']
+                        },
+                    ]
+                },
+                {
+                    name:'Collaboration & Design & Document',
+                    list:[
+                        {
+                            logo:[require('@/assets/skill-logo/github.png'),require('@/assets/skill-logo/figma.png'),require('@/assets/skill-logo/notion.png'),require('@/assets/skill-logo/office.png')],
+                            detail: ['GitHub', 'Figma', 'Notion', 'MsOffice']
+                        },
                     ]
                 },
             ]
@@ -116,6 +163,14 @@ export default {
 </script>
 
 <style>
+@media (max-width: 850px) {
+ .card_title.work{
+    font-size: 14.5px;
+ }
+ .skill_title{
+    font-size: 15px;
+ }
+}
 /* profile */
 .container-about{
 
@@ -163,7 +218,8 @@ export default {
     color: rgb(40, 37, 37); 
 }
 .wrap-info{
-    padding: 2px 0px 0px 1px;
+    /* padding: 2px 0px 0px 1px; */
+    margin-bottom: 10px;
 }
 .info_title{
     font-weight: 600;
@@ -172,13 +228,64 @@ export default {
     font-size: 12px;
     font-weight: 400;
     color: rgb(40, 37, 37);
-    margin-left: 4px;
+    margin-left: 13px;
 }
 
 /* skill */
+.container-skill{
+    margin-top:20px;
+    margin-bottom: 40px;
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.wrap-skill{
+    width: 48%;
+    margin-bottom: 15px;
+    
+    /* margin-right: 30px; */
+}
+.card.skill{
+    /* margin: 20px 10px; */
+    display: flex;
+    width:100%;
+    height: 90px;
+    max-width: 550px;
+    box-shadow: none;
+    border: solid 0.5px grey;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+/* .wrap-skill_img{
+    display: flex;
+    flex-direction: row;
+} */
 .skill{
-   width: 500px;
-   margin:20px 0px;
+    width:auto;
+    margin: 5px;
+}
+.card_img.skill{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.card_img.skill img{
+    width:30px;
+    height: 30px;
+    
+}
+.skill_detail{
+    text-align: center;
+    margin-top: 2px;
+}
+.wrap-content.skill{
+    display: flex;
+    
+}
+.skill_title{
+    font-weight: 600;
+    /* font-size: 17px; */
 }
 
 /* work */
@@ -187,6 +294,7 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 80px;
 }
 .wrap-work{
     width:48%;
@@ -214,10 +322,18 @@ export default {
     flex-direction: column;
     justify-content: start;
 }
+.content_date.work{
+    padding-left: 1px;
+    font-size: 13px;
+}
+.card_detail.work{
+    font-size: 13px;
+    padding-left: 1px;
+}
 
 /* channel */
 .container-card.channel{
-  
+  margin-bottom: 50px;
 }
 .wrap-card.channel{
   display: flex;
@@ -256,4 +372,5 @@ export default {
 .card_detail.channel span{
     line-height: 20px;
 }
+
 </style>

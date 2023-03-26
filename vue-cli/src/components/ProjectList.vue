@@ -87,7 +87,7 @@ export default {
   min-width: 370px;
   width: 45%;
   min-height: 280px;
-  margin:20px 0px;
+  margin-bottom:20px;
   /* min-height: 200px; */
   /* width: 100%; */
 }
