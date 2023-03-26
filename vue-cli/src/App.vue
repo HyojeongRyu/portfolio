@@ -170,6 +170,8 @@ a:hover { color: black; text-decoration: none;}
 /* root component */
 .container-root{
   margin: auto;
+  display:flex;
+  justify-content: center;
 }
 
 .no-mobile{
