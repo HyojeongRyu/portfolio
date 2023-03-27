@@ -139,6 +139,7 @@ export default {
 
 }
 body{
+  background-color: white;
   margin:0px;
   padding:0px;
   display:flex;
