@@ -30,7 +30,7 @@
               <img src="@/assets/icon_email.png" alt="">
             </span>
             <div class="wrap-content_email" @click="copy">
-              ryu8701@gmail.com
+              ryu8701@naver.com
             </div>
           </div>
         </div>

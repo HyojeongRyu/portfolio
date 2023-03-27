@@ -23,6 +23,24 @@
             </div> 
         </a>
       </div>
+      <div class="container-cowork">
+      
+          <div class="wrap-cowork">
+            <h3>Feedback</h3>
+            <ul>
+              <li class="wrap-comment" v-for="(item, idx) in commentList" :key="idx">
+                <div class="man">
+                  <img class="imoticon" :src="item.face">
+                  <span>{{ item.man }}</span>
+                </div>
+                <div class="fig-comment">
+                  <span class="comment" v-html="item.comment" ></span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        
+      </div>
         <!-- <div class="card_img">
           <img src="" alt="">
         </div> -->
@@ -39,6 +57,22 @@ export default {
         {detail: '식품 정보 웹 ver.2 (Mobile 전용)', name:'식품정보 웹 V2', period: '2022.05.~2022.07. (3개월)', roll: '프론트엔드, 서비스 기획',men:'1명',percentage:'100%', tool:'Vue2, HTML/CSS, JavaScript',imgSrc:require('@/assets/safeean2.png'),link:'http://qr.safeean.com/beta'},  
         {detail: 'QR 스캔시 식품 정보를 알려주는 웹 (Mobile 전용)', name:'식품정보 웹', period: '2021.03.~2021.08. (5개월)', roll: '프론트엔드,서비스 기획, 디자인',men:'2명', percentage:'40%',tool:'Vue2, HTML/CSS, JavaScript',imgSrc:require('@/assets/safeean1.png'),link:'http://qr.safeean.com/'},
         {detail: '', name:'카페 커뮤니티', period: '2022.02.~(진행중)', roll: '프론트엔드, 백엔드 (회원가입/로그인 파트) ',men:'3명', percentage:'40%', tool:'Vue2, HTML/CSS, JavaScript',imgSrc:require('@/assets/cafe.png'),link:'https://github.com/HyojeongRyu/web-project'}
+      ],
+      commentList:[
+        { 
+          face:require('@/assets/face.png'),
+          man: '남*규 (웹 디자이너)',
+          comment:`항상 팀원들을 생각하고 <b>책임감</b>을 가지고 일하는 개발자입니다.<br>
+                  팀장으로서 모두의 <b>일정을 조율</b>하고 <b>효율적</b>인 방법을 제안해주기도 했습니다.<br>
+                  또한 유연한 <b>해결능력</b>으로 문제를 해결하여 도움이 많이 되었습니다.`
+        },
+        // {
+        //   face:require('@/assets/face_02.png'),
+        //   man: '남*우 (백엔드 개발자)',
+        //   comment:`항상 팀원들을 생각하고 프로젝트에 <b>책임감</b>을 가지고 일하는 개발자입니다.<br>
+        //           팀장의 위치에서 모두가 프로젝트 일정을 맞춰 잘 소화할 수 있도록 <b>조율</b>하여 <b>효율적</b>인 방법을 제안해 주기도 하였습니다.<br>
+        //           또한 어떠한 문제가 일어나도 유연한 <b>문제해결능력</b>으로 프로젝트 기간 안에 문제를 해결하여 도움이 많이 되었습니다.`
+        // }
       ]
     }
   },
@@ -127,5 +161,32 @@ export default {
   flex-direction: column;
   justify-content: center;
   word-break: keep-all;
+}
+/* comment */
+.wrap-comment{
+  display: flex;
+  height: 200px;
+}
+.man{
+  width:30%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.imoticon{
+  width:100px;
+  object-fit: contain;
+  height: 150px;
+}
+.fig-comment{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width:70%;
+  word-break: keep-all;
+  
 }
 </style>
