@@ -187,6 +187,35 @@ export default {
   justify-content: center;
   width:70%;
   word-break: keep-all;
-  
+  position: relative;
+  /* border: 1px solid #484848 ; */
+  border-radius: 50px;
+   box-shadow: 1px 1px 5px var(--font-color) ;
+}
+/* 삼각형 테두리 */
+.fig-comment:after {
+  border-color: transparent #484848 transparent transparent;
+  border-style: solid;
+  border-width: 12px;
+  content: '';
+  display: block;
+  left: -25px;
+  position: absolute;
+  top: 90px;
+  width: 0;
+  z-index: 0;
+}
+/* 삼각형 */
+.fig-comment:before{
+  border-color: transparent white transparent transparent;
+  border-style: solid;
+  border-width: 12px;
+  content: '';
+  display: block;
+  left: -24.5px;
+  position: absolute;
+  top: 90px;
+  width: 0;
+  z-index: 1;
 }
 </style>
