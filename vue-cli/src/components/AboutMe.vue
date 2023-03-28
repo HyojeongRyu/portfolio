@@ -2,7 +2,7 @@
     <div class="container-about">
         <div class="container-profile">
             <div class="wrap-photo">
-                <img  class="profile-photo" src="@/assets/profile.jpg" alt="hyojeong_photo">
+                <img  class="profile-photo" src="@/assets/profile.png" alt="hyojeong_photo">
             </div>
             <div class="container-introduce">
                 <div class="name">류효정
@@ -196,8 +196,8 @@ export default {
     height: 250px;
 }
 .profile-photo{
-    width:100%;
-    height: 100%;
+    width:190px;
+    height: 250px;
     /* object-fit: cover; */
 }
 .container-introduce{

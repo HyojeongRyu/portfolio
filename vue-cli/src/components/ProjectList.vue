@@ -55,16 +55,29 @@ export default {
     return{
       cardList:[
         {detail: '식품 정보 웹 ver.2 (Mobile 전용)', name:'식품정보 웹 V2', period: '2022.05.~2022.07. (3개월)', roll: '프론트엔드, 서비스 기획',men:'1명',percentage:'100%', tool:'Vue2, HTML/CSS, JavaScript',imgSrc:require('@/assets/safeean2.png'),link:'http://qr.safeean.com/beta'},  
-        {detail: 'QR 스캔시 식품 정보를 알려주는 웹 (Mobile 전용)', name:'식품정보 웹', period: '2021.03.~2021.08. (5개월)', roll: '프론트엔드,서비스 기획, 디자인',men:'2명', percentage:'40%',tool:'Vue2, HTML/CSS, JavaScript',imgSrc:require('@/assets/safeean1.png'),link:'http://qr.safeean.com/'},
+        {detail: 'QR 스캔시 식품 정보를 알려주는 웹 (Mobile 전용)', name:'식품정보 웹', period: '2021.04.~2021.07. (4개월)', roll: '프론트엔드,서비스 기획, 디자인',men:'2명', percentage:'40%',tool:'Vue2, HTML/CSS, JavaScript',imgSrc:require('@/assets/safeean1.png'),link:'http://qr.safeean.com/'},
         {detail: '', name:'카페 커뮤니티', period: '2022.02.~(진행중)', roll: '프론트엔드, 백엔드 (회원가입/로그인 파트) ',men:'3명', percentage:'40%', tool:'Vue2, HTML/CSS, JavaScript',imgSrc:require('@/assets/cafe.png'),link:'https://github.com/HyojeongRyu/web-project'}
       ],
       commentList:[
         { 
           face:require('@/assets/face.png'),
-          man: '남*규 (웹 디자이너)',
+          man: '남*규 (전 직장 동료)',
           comment:`항상 팀원들을 생각하고 <b>책임감</b>을 가지고 일하는 개발자입니다.<br>
                   팀장으로서 모두의 <b>일정을 조율</b>하고 <b>효율적</b>인 방법을 제안해주기도 했습니다.<br>
                   또한 유연한 <b>해결능력</b>으로 문제를 해결하여 도움이 많이 되었습니다.`
+        },
+        { 
+          face:require('@/assets/face_02.png'),
+          man: '서*진 (스터디원)',
+          comment:`<b>꼼꼼하고</b> <b>리더십</b> 강한 개발자입니다.<br>
+                  스터디 방향을 정하고 이끌어준 덕분에 차근차근 진행할 수 있었습니다 :) <br>
+                  항상 이유를 궁금해하고 고민합니다. 그 덕분에 코드 리뷰 시간이 더 유익해졌습니다.`
+        },
+        { 
+          face:require('@/assets/face_03.png'),
+          man: '남*우 (스터디원)',
+          comment:`<b>학구열</b>이 강하고 어떤 일이든 허투루 하지 않는 개발자입니다.<br>
+                  효정이가 가진 의문을 같이 고민하고 해결하면서 발전하는  느낌을 받았습니다.`
         },
         // {
         //   face:require('@/assets/face_02.png'),
@@ -186,11 +199,13 @@ export default {
   flex-direction: column;
   justify-content: center;
   width:70%;
+  height: 130px;
+  padding:20px;
   word-break: keep-all;
   position: relative;
   /* border: 1px solid #484848 ; */
   border-radius: 50px;
-   box-shadow: 1px 1px 5px var(--font-color) ;
+  box-shadow: 1px 1px 3px var(--font-color) ;
 }
 /* 삼각형 테두리 */
 .fig-comment:after {
